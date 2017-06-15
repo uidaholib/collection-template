@@ -6,7 +6,7 @@ email: dbecker@uidaho.edu
 description: University of Idaho Digital Collections
 
 # url variables
-baseurl: /digital
+baseurl: /collection-template
 dburl: http://digital.lib.uidaho.edu/
 
 # jekyll collections settings
