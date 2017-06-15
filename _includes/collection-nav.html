@@ -1,0 +1,10 @@
+<hr>
+<div class="">Collection: 
+{% for page in site.digital_collections %}
+    {% assign col_path = page.path | split: "/" %}
+    {% if col_path[1] == col[1] %}
+        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+    {% endif %}
+{% endfor %}
+</div>
+<hr>

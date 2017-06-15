@@ -1,0 +1,8 @@
+collection,digital_id,item_id,title,date,description,subjects,location,latitude,longitude,type
+template,t001,temp001,first item,2017,"an item, 1st one",item,idaho,51,54,Image;StillImage
+template,t002,temp002,second item,2010,another item,item,idaho,52,54,Image;StillImage
+template,t003,temp003,third item,2015,yet more,dogs,alaska,45,45,Image;StillImage
+second,s001,s1,cats,1876,some cats,cats,england,15 ,10,Image;StillImage
+second,s002,s2,dogs,1923,some dogs,dogs,france,15 ,15,Image;StillImage
+second,s003,s3,muffins,1915,some muffins,muffins,france,15 ,16,Image;StillImage
+second,s004,s4,big cats,1965,some big cats,cats,idaho,52,54,Image;StillImage

@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<!-- get collection directory name: -->
+{% assign col = page.path | split: "/" %} 
+{% include collection-nav.html %}
+<h1>a table</h1>
+
+<p>with items:</p>
+{% assign items = site.data.all_items | where: "collection", col[1] %}
+<ul>
+{% for item in items %}
+    <li>{{ item.title }}, {{ item.date }}. {{ item.description }}</li>
+{% endfor %}
+</ul>

@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<!-- get collection directory name if necessary: -->
+{% assign col = page.path | split: "/" %} 
+{% include collection-nav.html %}
+{% assign home_info = site.data.collections_info | where: "collection", col[1] %}
+
+<h1>About {{ home_info[0].title }}</h1>
+
+<p>{{ home_info[0].description }}</p>
+
+{{ content }}

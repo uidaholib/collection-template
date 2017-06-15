@@ -1,0 +1,3 @@
+collection,title,description,collection_id,subjects
+template,Collection Template,A template example collection,temp,template
+second,Second Collection,The 2nd collection ever made.,sec,"animals,muffins"

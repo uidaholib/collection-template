@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<!-- get collection directory name: -->
+{% assign col = page.path | split: "/" %} 
+{% include collection-nav.html %}
+<h1>Timeline:</h1>
+{% assign items = site.data.all_items | where: "collection", col[1] %}
+{% assign date_range = "" | split: "," %}
+{% for item in items %}
+    {% assign date_range = date_range | push: item.date %}
+{% endfor %}
+{% assign date_range = date_range | sort %}
+
+<p>starts at {{ date_range | first }}, ends at {{ date_range | last }}.</p>

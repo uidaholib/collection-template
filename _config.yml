@@ -1,0 +1,16 @@
+# Jekyll GH-pages Digital Collection Generator
+
+# Site settings
+title: Digital Initiatives
+email: dbecker@uidaho.edu
+description: University of Idaho Digital Collections
+
+# url variables
+baseurl: /digital
+dburl: http://digital.lib.uidaho.edu/
+
+# jekyll collections settings
+collections:
+  digital_collections:
+    output: true
+    permalink: /:path/
