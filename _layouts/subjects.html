@@ -5,9 +5,9 @@ layout: default
 {% assign col = page.path | split: "/" %} 
 {% include collection-nav.html %}
 <h1>Subject cloud:</h1>
-{% assign items = site.data.all_items | where: "collection", col[1] %}
+{% assign items = site.data.collection_metadata | map: col[1] %}
 <ul>
-{% for item in items %}
+{% for item in items[0] %}
     <li>{{ item.subjects }}</li>
 {% endfor %}
 </ul>

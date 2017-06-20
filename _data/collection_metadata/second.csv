@@ -1,0 +1,5 @@
+digital_id,item_id,title,date,description,subjects,location,latitude,longitude,type
+s001,s1,cats,1876,some cats,cats,england,15,10,Image;StillImage
+s002,s2,dogs,1923,some dogs,dogs,france,15,15,Image;StillImage
+s003,s3,muffins,1915,some muffins,muffins,france,15,16,Image;StillImage
+s004,s4,big cats,1965,some big cats,cats,idaho,52,54,Image;StillImage

@@ -8,9 +8,9 @@ layout: default
 <p>centered at {{ page.lat }}, {{ page.long }}</p>
 
 <p>with items:</p>
-{% assign items = site.data.all_items | where: "collection", col[1] %}
+{% assign items = site.data.collection_metadata | map: col[1] %}
 <ul>
-{% for item in items %}
+{% for item in items[0] %}
     <li>{{ item.title }}, at {{ item.latitude }}, {{ item.longitude }}</li>
 {% endfor %}
 </ul>

@@ -6,9 +6,11 @@ at root are index and about that become the central portal for all collections.
 
 metadata for individual digital collections is placed in `collections_info.csv` template.
 
-metadata for all items in all digital collections is placed in the `all_items.csv` template.
+metadata for items in a digital collection are in individual csv files in the `collection_metadata` directory.
 
-to generate pages for a digital collection, add a directory in `_digital_collections` following `template` example.
-The directory name must be used in the csv data "collection" field.
-Include a `.md` stub for each page time you want to create for the collection.
-Each stub template has settings for the page type.
+to generate pages for a digital collection, copy the `template` directory in `_digital_collections`.
+The directory name must be used in the `collections_info.csv` data "collection" field.
+Delete the `.md` stub page types you do not want to generate for the collection.
+Each stub template has settings for the page.
+Place a csv with metadata about all items in the collection in the `_data/collection_metadata` directory (following the template).
+The csv must be named the same as the collection directory.
