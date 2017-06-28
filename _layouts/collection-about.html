@@ -1,10 +1,11 @@
 ---
 layout: default
 ---
-<!-- get collection directory name if necessary: -->
-{% assign col = page.path | split: "/" %} 
+{% comment %} get collection directory name: {% endcomment %}
+{% assign colPath = page.path | split: "/" %} 
+{% assign colName = colPath[-2] %}
 {% include collection-nav.html %}
-{% assign home_info = site.data.collections_info | where: "collection", col[1] %}
+{% assign home_info = site.data.collections_info | where: "collection", colName %}
 
 <h1>About {{ home_info[0].title }}</h1>
 

@@ -1,4 +1,4 @@
 digital_id,item_id,title,date,description,subjects,location,latitude,longitude,type
 t001,temp001,first item,2017,"an item, 1st one",item,idaho,51,54,Image;StillImage
-t002,temp002,second item,2010,another item,item,idaho,52,54,Image;StillImage
-t003,temp003,third item,2015,yet more,dogs,alaska,45,45,Image;StillImage
+t002,temp002,second item,2010,another item,"item;bikes",idaho,52,54,Image;StillImage
+t003,temp003,third item,2015,yet more,"dogs;cats",alaska,45,45,Image;StillImage

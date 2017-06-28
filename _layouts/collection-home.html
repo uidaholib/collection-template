@@ -1,9 +1,10 @@
 ---
 layout: default
 ---
-<!-- get collection directory name if necessary: -->
-{% assign col = page.path | split: "/" %} 
-{% assign home_info = site.data.collections_info | where: "collection", col[1] %}
+{% comment %} get collection directory name: {% endcomment %}
+{% assign colPath = page.path | split: "/" %} 
+{% assign colName = colPath[-2] %}
+{% assign home_info = site.data.collections_info | where: "collection", colName %}
 
 {% include collection-nav.html %}
 
@@ -11,6 +12,6 @@ layout: default
 
 <p>{{ home_info[0].description }}</p>
 
-{% assign items = site.data.all_items | where: "collection", col[1] %}
+{% assign items = site.data.collection_metadata.[colName] %}
 
 <p>Contains {{ items | size }} total items.</p>

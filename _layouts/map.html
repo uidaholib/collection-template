@@ -1,16 +1,17 @@
 ---
 layout: default
 ---
-<!-- get collection directory name: -->
-{% assign col = page.path | split: "/" %} 
+{% comment %} get collection directory name: {% endcomment %}
+{% assign colPath = page.path | split: "/" %} 
+{% assign colName = colPath[-2] %}
 {% include collection-nav.html %}
 <h1>a map</h1>
 <p>centered at {{ page.lat }}, {{ page.long }}</p>
 
 <p>with items:</p>
-{% assign items = site.data.collection_metadata | map: col[1] %}
+{% assign items = site.data.collection_metadata.[colName] %}
 <ul>
-{% for item in items[0] %}
+{% for item in items %}
     <li>{{ item.title }}, at {{ item.latitude }}, {{ item.longitude }}</li>
 {% endfor %}
 </ul>

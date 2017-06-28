@@ -1,13 +1,14 @@
 ---
 layout: default
 ---
-<!-- get collection directory name: -->
-{% assign col = page.path | split: "/" %} 
+{% comment %} get collection directory name: {% endcomment %}
+{% assign colPath = page.path | split: "/" %} 
+{% assign colName = colPath[-2] %}
 {% include collection-nav.html %}
 <h1>Browse all items:</h1>
-{% assign items = site.data.collection_metadata | map: col[1] %}
+{% assign items = site.data.collection_metadata.[colName] %}
 <ul>
-{% for item in items[0] %}
+{% for item in items %}
     <li>{{ item.title }}, {{ item.date }}. url-to-image/{{ item.item_id }}.jpg</li>
 {% endfor %}
 </ul>

@@ -1,13 +1,32 @@
 ---
 layout: default
 ---
-<!-- get collection directory name: -->
-{% assign col = page.path | split: "/" %} 
+{% comment %} get collection directory name: {% endcomment %}
+{% assign colPath = page.path | split: "/" %} 
+{% assign colName = colPath[-2] %}
+
 {% include collection-nav.html %}
+
 <h1>Subject cloud:</h1>
-{% assign items = site.data.collection_metadata | map: col[1] %}
-<ul>
-{% for item in items[0] %}
-    <li>{{ item.subjects }}</li>
+{% comment %} get collection items from data and find subjects {% endcomment %}
+{% assign items = site.data.collection_metadata.[colName] %}
+{% assign subjects = "" | split: "," %}
+{% for item in items %}
+	{% assign isubs = item.subjects | split: ";" %}
+    {% for s in isubs %}
+        {% assign ss = s | strip %}
+        {% assign subjects = subjects | push: ss %}
+    {% endfor %}
 {% endfor %}
-</ul>
+{% assign uniqueSubjects = subjects | uniq | sort %}
+<div class="subject-cloud">
+{% for unique in uniqueSubjects %}
+    {% assign count = 0 %}
+    {% for c in subjects %}
+        {% if c == unique %}
+            {% assign count = count | plus: 1 %}
+        {% endif %}
+    {% endfor %}
+<div><a href="#{{ unique }}">{{ unique }}, {{ count }}</a></div>
+{% endfor %}
+</div>
