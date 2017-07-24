@@ -1,9 +1,17 @@
-<hr>
-<div class="trigger">Main: 
-{% for my_page in site.pages %}
-    {% if my_page.title %}
-    <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title | escape }}</a>
-    {% endif %}
+
+{% assign mainPages = "" | split: "," %}
+{% for p in site.home %}
+    {% assign mainPages = mainPages | push: p.slug %}
 {% endfor %}
-</div>
 <br>
+<div class="main-nav">
+    <a href="{{ site.baseurl }}/" class="{% if page.slug == "index" %}active-tab{% endif %}">Home</a>
+    {% if mainPages contains "about" %}<a href="{{ site.baseurl }}/about/" class="{% if page.slug == "about" %}active-tab{% endif %}">About</a>{% endif %}
+    {% for mp in site.home %}
+    {% if mp.slug != "index" and mp.slug != "about" %}
+    <a href="{{ mp.url | prepend: site.baseurl }}" class="{% if page.slug == mp.slug %}active-tab{% endif %}">{{ mp.title }}</a>
+    {% endif %}
+    {% endfor %}
+
+</div>
+<hr>

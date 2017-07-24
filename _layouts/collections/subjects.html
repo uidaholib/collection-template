@@ -1,0 +1,30 @@
+---
+layout: default
+---
+{% include collection-variables.html %}
+{% include collection-banner.html %}
+{% include collection-nav.html %}
+
+<h1>Subject cloud:</h1>
+{% comment %} get collection items from data and find subjects {% endcomment %}
+{% assign items = site.data.collection_metadata.[colName] %}
+{% assign subjects = "" | split: ";" %}
+{% for item in items %}
+	{% if item.subjects %}{% assign isubs = item.subjects | split: ";" %}
+    {% for s in isubs %}
+        {% assign ss = s | strip %}
+        {% assign subjects = subjects | push: ss %}
+    {% endfor %}{% endif %}
+{% endfor %}
+{% assign uniqueSubjects = subjects | uniq | sort %}
+<div class="subject-cloud">
+{% for unique in uniqueSubjects %}
+    {% assign count = 0 %}
+    {% for c in subjects %}
+        {% if c == unique %}
+            {% assign count = count | plus: 1 %}
+        {% endif %}
+    {% endfor %}
+<div><a href="#{{ unique }}">{{ unique }}, {{ count }}</a></div>
+{% endfor %}
+</div>

@@ -1,10 +1,21 @@
-<hr>
-<div class="">Collection: 
-{% for page in site.digital_collections %}
-    {% assign pagePath = page.path | split: "/" %}
+{% assign colPages = "" | split: "," %}
+{% for p in site.digital_collections %}
+    {% assign pagePath = p.path | split: "/" %}
     {% if pagePath[-2] == colName %}
-        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        {% assign colPages = colPages | push: p.slug %}
     {% endif %}
 {% endfor %}
-</div>
+
+<nav>
+    <div class="collection-nav">
+        {% if colPages contains "index" %}<a href="{{ site.baseurl }}/{{ colName }}/" class="{% if page.slug == "index" %}active-tab{% endif %}">Home</a>{% endif %}
+        {% if colPages contains "about" %}<a href="{{ site.baseurl }}/{{ colName }}/about/" class="{% if page.slug == "about" %}active-tab{% endif %}">About</a>{% endif %}
+        {% if colPages contains "table" %}<a href="{{ site.baseurl }}/{{ colName }}/table/" class="{% if page.slug == "table" %}active-tab{% endif %}">Table</a>{% endif %}
+        {% if colPages contains "map" %}<a href="{{ site.baseurl }}/{{ colName }}/map/" class="{% if page.slug == "map" %}active-tab{% endif %}">Map</a>{% endif %}
+        {% if colPages contains "timeline" %}<a href="{{ site.baseurl }}/{{ colName }}/timeline/" class="{% if page.slug == "timeline" %}active-tab{% endif %}">Timeline</a>{% endif %}
+        {% if colPages contains "subjects" %}<a href="{{ site.baseurl }}/{{ colName }}/subjects/" class="{% if page.slug == "subjects" %}active-tab{% endif %}">Subjects</a>{% endif %}
+        {% if colPages contains "browse" %}<a href="{{ site.baseurl }}/{{ colName }}/browse/" class="{% if page.slug == "browse" %}active-tab{% endif %}">View All</a>{% endif %}
+        <a href="{{ colDB }}" target="_blank">Database</a>
+    </div>
+</nav>
 <hr>

@@ -1,16 +1,21 @@
 # Jekyll GH-pages Digital Collection Generator
 
 # Site settings
-title: Digital Initiatives
-email: dbecker@uidaho.edu
-description: University of Idaho Digital Collections
+title: Digital Collection Template
+description: Template for creating digital collection website with Jekyll
+keywords: idaho, digital collections, history, photographs
+owner: University of Idaho Library
+email: ewilliamson@uidaho.edu
 
 # url variables
 baseurl: /collection-template
-dburl: http://digital.lib.uidaho.edu/
+dburl: http://digital.lib.uidaho.edu/cdm/search/collection/
 
 # jekyll collections settings
 collections:
+  home:
+    output: true
+    permalink: /:title/
   digital_collections:
     output: true
     permalink: /:path/

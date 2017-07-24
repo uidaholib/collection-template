@@ -1,0 +1,15 @@
+---
+layout: main-page
+title: About
+---
+
+<h1>About {{ site.title }}</h1>
+
+<p>{{ site.description }}</p>
+
+{% assign countAll = 0 %}
+{% assign cols = site.data.collection_metadata %}
+{% for col in cols %}
+    {% assign countAll = countAll | plus: col[1].size %}
+{% endfor %}
+<p>Collections contain {{ countAll }} total items.</p> 

@@ -1,0 +1,14 @@
+---
+layout: default
+---
+{% include collection-variables.html %}
+{% include collection-banner.html %}
+{% include collection-nav.html %}
+
+<h1>Browse all items:</h1>
+{% assign items = site.data.collection_metadata.[colName] %}
+<ul>
+{% for item in items %}
+    <li>{{ item.title }}, {{ item.date }}. url-to-image/{{ item.item_id }}.jpg</li>
+{% endfor %}
+</ul>

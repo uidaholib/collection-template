@@ -1,6 +1,6 @@
 ---
 # create about page for a collection
-layout: collection-about
+layout: collections/about
 ---
 <!-- content written here will be copied to the about page template -->
 

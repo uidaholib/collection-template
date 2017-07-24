@@ -1,0 +1,21 @@
+---
+# full css
+---
+/* add fonts */
+@font-face {
+  font-family: 'Noto Sans';
+  src:  url('fonts/NotoSans-Regular-webfont.woff') format('woff');
+}
+/* set base variables */
+$base-font: 'Noto Sans', Verdana, Arial, sans-serif;
+
+$base-font-size: 18px;
+$base-font-size-sm: 14px;
+$mobile-font-size: 16px;
+
+/* add scss partials in cascading order */
+@import 
+    "colors",
+    "base",
+    "layout"
+;

@@ -1,0 +1,16 @@
+---
+layout: default
+---
+{% include collection-variables.html %}
+{% include collection-banner.html %}
+{% include collection-nav.html %}
+
+<h1>Timeline:</h1>
+{% assign items = site.data.collection_metadata.[colName] %}
+{% assign date_range = "" | split: "," %}
+{% for item in items %}
+    {% if item.date %}{% assign date_range = date_range | push: item.date %}{% endif %}
+{% endfor %}
+{% assign date_range = date_range | sort %}
+
+<p>starts at {{ date_range | first }}, ends at {{ date_range | last }}.</p>

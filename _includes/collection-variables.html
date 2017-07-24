@@ -1,0 +1,11 @@
+{% comment %} get collection directory name: {% endcomment %}
+{% assign colPath = page.path | split: "/" %} 
+{% assign colName = colPath[-2] %}
+
+{% comment %} set collection variables: {% endcomment %}
+{% assign colInfo = site.data.collections_info | where: "collection", colName %}
+{% assign colTitle = colInfo[0].title %}
+{% assign colDescription = colInfo[0].description %}
+{% assign colDB = colInfo[0].collection_id | prepend: site.dburl %}
+
+{% comment %} varibles colName, colTitle, colDescription, colDB will be available to all includes in the layout {% endcomment %}

@@ -1,0 +1,15 @@
+---
+layout: main-page
+title: Home
+permalink: /:title
+---
+
+<h2>Welcome!</h2>
+<p>{{site.description}}</p>
+
+<p>Visit our collections:</p>
+<ul>
+{% for item in site.data.collections_info %}
+    <li><a href="{{ site.baseurl }}/{{ item.collection }}/">{{ item.title }}</a></li>
+{% endfor %}
+</ul>

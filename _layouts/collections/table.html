@@ -1,0 +1,16 @@
+---
+layout: default
+---
+{% include collection-variables.html %}
+{% include collection-banner.html %}
+{% include collection-nav.html %}
+
+<h1>a table</h1>
+
+<p>with items:</p>
+{% assign items = site.data.collection_metadata.[colName] %}
+<ul>
+{% for item in items %}
+    <li>{{ item.title }}, {{ item.date }}. {{ item.description }}</li>
+{% endfor %}
+</ul>

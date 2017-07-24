@@ -1,3 +1,4 @@
 collection,title,description,collection_id,subjects
 template,Collection Template,A template example collection,temp,template
-second,Second Collection,The 2nd collection ever made.,sec,"animals,muffins"
+second,Second Collection,The 2nd collection ever made.,sec,Animals;muffins
+barstock,Barnard-Stockbridge Photograph Collection,"Historical Photographs of Northern Idaho Mines, Towns, and Scenery, 1894-1964",bar-stock,Northern Idaho;Mining;Photography
