@@ -1,5 +1,17 @@
 # jekyll gh-pages friendly build a digital collections site
 
+This is a prototype jekyll project used to build front end websites for digital collections.
+Website generation is driven by collection metadata.
+This basic prototype has data from the metadata exposed in the correct pages, but the visualizations and style are not built out.
+It uses no plugins or dependencies, thus can be deployed on gh-pages (content is hosted else where).
+
+The concept is that digital collection content is held in a repository such as CONTENTdm and quality metadata is developed.
+The jekyll project uses the metadata to develop browsing and discovery visualizations on static web pages. 
+Thus the front end of your digital collections are fast and responsive, while still providing easy access into the respository for more powerful search functions.
+Invest time in improving metadata rather than customizing your repository or developing custom sites.
+
+## Set up
+
 set the `_config.yml` variables
 
 at root are index and about that become the central portal for all collections.
