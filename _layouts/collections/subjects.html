@@ -7,7 +7,7 @@ layout: default
 
 <h1>Subject cloud:</h1>
 {% comment %} get collection items from data and find subjects {% endcomment %}
-{% assign items = site.data.collection_metadata.[colName] %}
+{% assign items = site.data.collection_metadata[colName] %}
 {% assign subjects = "" | split: ";" %}
 {% for item in items %}
 	{% if item.subjects %}{% assign isubs = item.subjects | split: ";" %}

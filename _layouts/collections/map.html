@@ -9,7 +9,7 @@ layout: default
 <p>centered at {{ page.lat }}, {{ page.long }}</p>
 
 <p>with items:</p>
-{% assign items = site.data.collection_metadata.[colName] %}
+{% assign items = site.data.collection_metadata[colName] %}
 <ul>
 {% for item in items %}
     <li>{{ item.title }}, at {{ item.latitude }}, {{ item.longitude }}</li>
