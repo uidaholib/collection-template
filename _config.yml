@@ -8,7 +8,11 @@ owner: University of Idaho Library
 email: ewilliamson@uidaho.edu
 
 # url variables
+# url = your domain, on gh-pages username.github.io
+url: https://uidaholib.github.io
+# baseurl = the path where the site will appear under, on gh-pages the repo name
 baseurl: /collection-template
+# the database where your images are stored
 dburl: http://digital.lib.uidaho.edu/cdm/search/collection/
 
 # jekyll collections settings
