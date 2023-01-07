@@ -1,5 +1,7 @@
 # jekyll gh-pages friendly build a digital collections site
 
+> archived: this was a proof of concept for building digital collections using jekyll and metadata--see [CollectionBuilder](https://collectionbuilder.github.io/) for the eventual production project!
+
 This is a prototype jekyll project used to build front end websites for digital collections.
 Website generation is driven by collection metadata.
 This basic prototype has data from the metadata exposed in the correct pages, but the visualizations and style are not built out.
